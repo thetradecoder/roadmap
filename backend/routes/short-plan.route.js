@@ -20,7 +20,7 @@ router.route('/update/:id').put((req, res)=>{
     shortPlan.findOneAndUpdate({_id:req.params.id}, req.body)
     .then(data=>res.send('updated'))
     .catch(err=>res.send(err))
-})
+});
 
 
 module.exports = router;
