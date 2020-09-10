@@ -7,9 +7,9 @@ const longPlanSchema = new Schema({
     title:{type:String, required:true},
     details:{type:String, required:true},
     progress:{type:String},
-    plandate:new Date(),
-    startdate:new Date(),
-    enddate: new Date(),
+    plandate:{type:Date},
+    startdate:{type:Date},
+    enddate: {type:Date},
     duration:{type:Number, required:true}
 }, {timestamps:true});
 
