@@ -50,6 +50,7 @@ Check your github, the source code uploaded to your github master branch.
 
 ## Deploy your project to github pages (gh-pages). 
 This time is for testing purpose, later we'll deploy the developed app
+
 `npm run deploy`
 
 Check your github, the app has been deployed to gh-pages branch.
