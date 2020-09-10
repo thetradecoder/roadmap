@@ -9,20 +9,20 @@ Add a `.env` file in the `backend` folder and add `MONGO_URI=yourmongodburi` in 
 ***
 
 # Documents 
-Install react app
+## Install react app
 `npx create-react-app roadmap`
 
-Install gh-pages
+## Install gh-pages
 `npm install gh-pages`
 
 Add `.env` to the `.gitignore` file 
 
-Create an empty repo on github named `roadmap` (no file)
+## Create an empty repo on github named `roadmap` (no file)
 
-Add homepage to package.json (add your own project url)
+## Add homepage to package.json (add your own project url)
 `"homepage":"https://thetradecoder.github.io/roadmap"`
 
-Add these two properties in the script area in package.json file
+## Add these two properties in the script area in package.json file
 
 ```
 "script": {
@@ -30,25 +30,26 @@ Add these two properties in the script area in package.json file
 "deploy":"gh-pages -d build"
 }
 ```
-Add git to your local project by this command
+## Add git to your local project by this command
 `git init`
 
 
-Add remote (github) url to your local project (use your own project url)
+## Add remote (github) url to your local project (use your own project url)
 `git remote add origin https://github.com/thetradecoder/roadmap`
 
-Add local changes to your project
+## Add local changes to your project
 `git add --all`
 
-First commit to your project 
+## First commit to your project 
 `git commit -m 'local update'`
 
-Send your source code to github from the local machine
+## Send your source code to github from the local machine
 `git push origin master`
 
 Check your github, the source code uploaded to your github master branch.
 
-Deploy your project to github pages (gh-pages). This time is for testing purpose, later we'll deploy the developed app
+## Deploy your project to github pages (gh-pages). 
+This time is for testing purpose, later we'll deploy the developed app
 `npm run deploy`
 
 Check your github, the app has been deployed to gh-pages branch.
