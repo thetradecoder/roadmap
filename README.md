@@ -55,7 +55,12 @@ This time is for testing purpose, later we'll deploy the developed app
 
 Check your github, the app has been deployed to gh-pages branch.
 
+***
+
 # Let's build the main app
+
+***
+
 As the app will require to store our data, we'll use mongoDB and all the operation will be via our own server. So, now we need a server. Let's create it for our project
 
 ## Make a folder in your current project
