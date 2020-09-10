@@ -35,7 +35,7 @@ Add `.env` to the `.gitignore` file
 
 
 ## Add remote (github) url to your local project (use your own project url)
-`git remote add origin https://github.com/thetradecoder/roadmap`
+`git remote add origin https://github.com/thetradecoder/roadmap.git`
 
 ## Add local changes to your project
 `git add --all`
