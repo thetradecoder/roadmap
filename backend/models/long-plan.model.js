@@ -10,7 +10,8 @@ const longPlanSchema = new Schema({
     plandate:{type:Date},
     startdate:{type:Date},
     deadline: {type:Date},
-    duration:{type:Number}
+    duration:{type:Number},
+    open:{type:Boolean}
 }, {timestamps:true});
 
 const longPlan = mongoose.model('longPlan', longPlanSchema);

@@ -10,7 +10,8 @@ const shortPlanSchema = new Schema({
     plandate: {type:Date},
     startdate: {type:Date},
     deadline: {type:Date},
-    duration: {type:Number}
+    duration: {type:Number},
+    open:{type:Boolean}
 }, {timestamps:true});
 
 const shortPlan = mongoose.model('shortPlan', shortPlanSchema);
