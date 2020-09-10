@@ -2,18 +2,18 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const longPlanSchema = new Schema({
-    username:{type:String, required:true},
-    type:"long-term",
-    title:{type:String, required:true},
-    details:{type:String, required:true},
+    username:{type:String},
+    type:{type:String},
+    title:{type:String},
+    details:{type:String},
     progress:{type:String},
     plandate:{type:Date},
     startdate:{type:Date},
-    enddate: {type:Date},
-    duration:{type:Number, required:true}
+    deadline: {type:Date},
+    duration:{type:Number}
 }, {timestamps:true});
 
 const longPlan = mongoose.model('longPlan', longPlanSchema);
 
-module.export = longPlan;
+module.exports = longPlan;
 
