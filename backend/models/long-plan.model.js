@@ -13,5 +13,7 @@ const longPlanSchema = new Schema({
     duration:{type:Number, required:true}
 }, {timestamps:true});
 
-module.export = longPlanSchema;
+const longPlan = mongoose.model('longPlan', longPlanSchema);
+
+module.export = longPlan;
 

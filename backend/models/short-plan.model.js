@@ -13,5 +13,8 @@ const shortPlanSchema = new Schema({
     duration:{type:Number}
 }, {timestamps:true});
 
-module.export = shortPlanSchema;
+const shortPlan = mongoose.model('shortPlan', shortPlanSchema);
+
+
+module.export = shortPlan;
 
