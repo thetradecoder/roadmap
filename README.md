@@ -71,10 +71,51 @@ Go to the folder
 ## Make an empty project here 
 `npm init -y`
 
-Create a `.gitignore` file here and copy and paste the code from the earlier `.gitignore` file. Then make a `.env` file.
+Create a `.gitignore` file here and copy and paste the code from the earlier `.gitignore` file. Then make a `.env` file. Define/set `PORT` and  `MONGO_URI` in the `.env` file.  
+
 
 ## Install some required packages in the backend
-`npm install express dotenv cors body-parser mongoose mongodb`
+`npm install express dotenv cors body-parser mongoose mongodb nodemon`
+
+Create a `server.js` file in the backend and add the following code in the server file
+
+```
+const express = require('express');
+const cors = require('cors');
+const mongoose = require('mongoose');
+require('dotenv').config();
+
+// define your own port at .env or it will run on port 5000
+const port= process.env.PORT || 5000;
+
+const app = express();
+
+app.use(cors());
+app.use(express.json());
+
+
+// conncet mongodb
+const mongoUri = process.env.MONGO_URI;
+mongoose.connect(mongoUri, {useNewUrlParser:true, useUnifiedTopology:true, useCreateIndex:true});
+mongoose.connection.once('open', ()=>{
+    console.log('- mongo connected');
+})
+
+
+// connect server
+app.listen(port, ()=>{
+    console.log(`- Server is listening on port ${port}`);
+})
+
+
+
+
+
+
+
+
+
+```
 
 
 
