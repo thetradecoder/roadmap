@@ -1,13 +1,17 @@
 import React from 'react';
-import "bootstrap/dist/css/bootstrap.min.css"
+import {BrowserRouter as Router} from 'react-router-dom';
+import "bootstrap/dist/css/bootstrap.min.css";
+import Navbar from './components/navbar.component.js';
 
 
 function App() {
   return (
+    <Router>
+      <Navbar />
     <div>
-      <h1 className="text-center">Roadmap</h1>
-     
+      <h1 className="text-center">Roadmap</h1>     
     </div>
+    </Router>
   );
 }
 
