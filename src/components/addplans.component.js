@@ -76,7 +76,7 @@ export default function AddPlans(){
                         </div>
                         <div className="form-group">
                             <label>Plan duration:</label>
-                            <input type="text" className="form-control" value={duration} onChange={onChangeDuration} required/>
+                            <input type="number" min="0" className="form-control" value={duration} onChange={onChangeDuration} required/>
                         </div>
                         <div className="form-group">
                             <label>Start date:</label><br/>
@@ -106,8 +106,7 @@ export default function AddPlans(){
                     <div className="form-group">
                         <label>Progress:</label>
                         <input type="text" className="form-control" value={progress} onChange={onChangeProgress} required/>
-                    </div>
-                  
+                    </div>                  
                     <button type="submit" className="btn btn-primary">Add plan</button>
                 </form>
             </div>
