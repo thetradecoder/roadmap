@@ -1,4 +1,6 @@
 import React, {useState} from 'react';
+import DatePicker from 'react-datepicker';
+import "react-datepicker/dist/react-datepicker.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from 'axios';
 
@@ -8,9 +10,10 @@ export default function AddPlans(){
 
     const [username, setUsername] =  useState("mamun");
     const [type, setType] =  useState("shortplan");
-    const [startdate, setStartdate]= useState(new Date().toLocaleDateString());
-    const [deadline, setDeadline] = useState(new Date().toLocaleDateString());
+    const [startdate, setStartdate]= useState(new Date());
+    const [deadline, setDeadline] = useState(new Date());
     const [open, setOpen] = useState(true);
+    const [duration, setDuration] = useState(1)
     const [title, setTitle]= useState("");
     const [details, setDetails] = useState("");
     const [progress, setProgress]= useState("");
@@ -31,6 +34,9 @@ export default function AddPlans(){
     function onChangeOpen(e){
         setOpen(e.target.value)
     };
+    function onChangeDuration(e){
+        setDuration(e.target.value);
+    }
     function onChangeTitle(e){
         setTitle(e.target.value)
     };
@@ -43,7 +49,7 @@ export default function AddPlans(){
     function onSubmitPlan(e){
         e.preventDefault();
         const plans={
-            username, type, startdate, deadline, open, title, details, progress
+            username, type, startdate, duration, deadline, open, title, details, progress
         }
         axios.post(`http://localhost:5000/${type}/add`, plans)
         .then(res=>{
@@ -63,22 +69,26 @@ export default function AddPlans(){
                         </div>
                         <div className="form-group">
                             <label>Plan type:</label>
-                            <select selected={type} onChange={onChangeType} className="form-control">
+                            <select selected={type} onChange={onChangeType} className="form-control" required>
                                 <option>shortplan</option>
                                 <option>longplan</option>
                             </select>                           
                         </div>
                         <div className="form-group">
-                            <label>Start date:</label>
-                            <input type="text" className="form-control" value={startdate} onChange={onChangeStartdate} required/>
+                            <label>Plan duration:</label>
+                            <input type="text" className="form-control" value={duration} onChange={onChangeDuration} required/>
                         </div>
                         <div className="form-group">
-                            <label>Deadline:</label>
-                            <input type="text" className="form-control" value={deadline} onChange={onChangeDeadline} required/>
+                            <label>Start date:</label><br/>
+                            <DatePicker selected ={startdate} onChange={onChangeStartdate} className="form-control" required/>
+                        </div>
+                        <div className="form-group">
+                            <label>Deadline:</label><br/>
+                            <DatePicker selected={deadline} onChange={onChangeDeadline} className="form-control" required/>                            
                         </div>
                         <div className="form-group">
                             <label>Open:</label>
-                            <select selected={open} onChange={onChangeOpen} className="form-control">
+                            <select selected={open} onChange={onChangeOpen} className="form-control" required>
                                 <option>true</option>
                                 <option>false</option>
                             </select>
