@@ -4,6 +4,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Navbar from './components/navbar.component.js';
 import ShortPlanList from './components/shortplanlist.component.js';
 import LongPlanList from './components/longplanlist.component.js';
+import AddPlans from './components/addplans.component.js';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
     </div>
     <Route path="/shortplan" component={ShortPlanList}></Route>
     <Route path="/longplan" component={LongPlanList}></Route>
+    <Route path='/' component={AddPlans}></Route>
 
     </Router>
   );
