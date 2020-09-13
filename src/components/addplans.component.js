@@ -63,7 +63,7 @@ export default function AddPlans(){
                         </div>
                         <div className="form-group">
                             <label>Plan type:</label>
-                            <select selected={type} onChange={onChangeType}>
+                            <select selected={type} onChange={onChangeType} className="form-control">
                                 <option>shortplan</option>
                                 <option>longplan</option>
                             </select>                           
@@ -78,7 +78,7 @@ export default function AddPlans(){
                         </div>
                         <div className="form-group">
                             <label>Open:</label>
-                            <select selected={open} onChange={onChangeOpen}>
+                            <select selected={open} onChange={onChangeOpen} className="form-control">
                                 <option>true</option>
                                 <option>false</option>
                             </select>
