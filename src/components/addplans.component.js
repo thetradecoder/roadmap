@@ -101,7 +101,7 @@ export default function AddPlans(){
                     </div>
                     <div className="form-group">
                         <label>Plan details:</label>
-                        <input type="text" className="form-control" value={details} onChange={onChangeDetails} required/>
+                        <textarea className="form-control" rows="5" cols="50" value={details} onChange={onChangeDetails} required/>
                     </div>
                     <div className="form-group">
                         <label>Progress:</label>
