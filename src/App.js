@@ -13,9 +13,10 @@ function App() {
     <div>
       <h1 className="text-center">Roadmap</h1>     
     </div>
+    <Route path='/' exact component={AddPlans}></Route>
     <Route path="/shortplan" component={ShortPlanList}></Route>
     <Route path="/longplan" component={LongPlanList}></Route>
-    <Route path='/' component={AddPlans}></Route>
+    
 
     </Router>
   );

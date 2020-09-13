@@ -1,12 +1,13 @@
 import React, {useState} from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import axios from 'axios';
 
 
 
 export default function AddPlans(){
 
     const [username, setUsername] =  useState("mamun");
-    const [type, setType] =  useState("");
+    const [type, setType] =  useState("shortplan");
     const [startdate, setStartdate]= useState(new Date().toLocaleDateString());
     const [deadline, setDeadline] = useState(new Date().toLocaleDateString());
     const [open, setOpen] = useState(true);
@@ -41,6 +42,14 @@ export default function AddPlans(){
     };
     function onSubmitPlan(e){
         e.preventDefault();
+        const plans={
+            username, type, startdate, deadline, open, title, details, progress
+        }
+        axios.post(`http://localhost:5000/${type}/add`, plans)
+        .then(res=>{
+            
+            window.location=(`/${type}`)})
+        .catch(err=>console.log(err));
     }
 
     return (
@@ -54,7 +63,10 @@ export default function AddPlans(){
                         </div>
                         <div className="form-group">
                             <label>Plan type:</label>
-                            <input type="text" className="form-control" value={type} onChange={onChangeType} required/>
+                            <select selected={type} onChange={onChangeType}>
+                                <option>shortplan</option>
+                                <option>longplan</option>
+                            </select>                           
                         </div>
                         <div className="form-group">
                             <label>Start date:</label>
@@ -66,7 +78,10 @@ export default function AddPlans(){
                         </div>
                         <div className="form-group">
                             <label>Open:</label>
-                            <input type="text" className="form-control" value={open} onChange={onChangeOpen} required/>
+                            <select selected={open} onChange={onChangeOpen}>
+                                <option>true</option>
+                                <option>false</option>
+                            </select>
                         </div>
                     </div>
                     
