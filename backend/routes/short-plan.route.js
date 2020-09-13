@@ -9,8 +9,8 @@ router.route('/').get((req, res)=>{
 
 
 router.route('/add').post((req, res)=>{
-    const {username, title, description, progress, startdate, deadline, duration, open }=req.body;
-    const plan = new shortPlan({username, type:"short-term", title, description, progress, plandate:new Date(), startdate, deadline, duration, open});
+    const {username, title, details, progress, startdate, deadline, duration, open }=req.body;
+    const plan = new shortPlan({username, type:"short-term", title, details, progress, plandate:new Date(), startdate, deadline, duration, open});
     plan.save()
     .then(()=>res.send('Plan Added'))
     .catch(err=>res.send(err))
