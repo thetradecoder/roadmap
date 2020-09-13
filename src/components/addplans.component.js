@@ -26,10 +26,10 @@ export default function AddPlans(){
     };
 
     function onChangeStartdate(e){
-        setStartdate(e.target.value);
+        setStartdate(e);
     };
     function onChangeDeadline(e){
-        setDeadline(e.target.value);
+        setDeadline(e);
     }
     function onChangeOpen(e){
         setOpen(e.target.value)
