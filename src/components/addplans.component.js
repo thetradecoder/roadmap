@@ -58,7 +58,7 @@ export default function AddPlans(){
             window.location=(`/${type}`)})
         .catch(err=>console.log(err));
     }
-
+ 
     return (
         <div>
             <div className="container">
