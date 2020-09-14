@@ -8,7 +8,7 @@ useEffect(()=>{
 
     axios.get('http://localhost:5000/shortplan')
     .then(res=>{
-        setShortplans(res.data);
+        setShortplans(res.data.reverse());
     })
     .catch(err=>console.log(err))
 })
