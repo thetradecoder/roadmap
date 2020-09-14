@@ -4,6 +4,7 @@ import axios from 'axios';
 
 export default function ShortPlanList(){
 const [shortplans, setShortplans] =  useState([]);
+const [open, setOpen]= useState(true);
 useEffect(()=>{
 
     axios.get('http://localhost:5000/shortplan')
@@ -11,14 +12,25 @@ useEffect(()=>{
         setShortplans(res.data.reverse());
     })
     .catch(err=>console.log(err))
-})
+});
+
+function onChangeOpen(e){
+    setOpen(open===true?false:true);
+
+};
 
 
     return (
         <div>
             <div className="container">
+                <div>
+                    <select selected={open} onChange={onChangeOpen} className="form-control">
+                        <option>Open plans</option>
+                        <option>Closed plans</option>
+                    </select>
+                </div>
 
-                {shortplans.map(e=>{
+                {shortplans.filter(e=>e.open=open).map(e=>{
                     return (
                         
                         <div className="shadow p-3">                                        
