@@ -17,6 +17,7 @@ export default function Navbar (){
                 </button>
                 <div id="main-menu" className="collapse navbar-collapse">
                     <ul className="navbar-nav ml-auto">
+                        <li className="nav-item"><Link to = "/" className="nav-link">Set Plans</Link></li>
                         <li className="nav-item"><Link to = "/shortplan" className="nav-link">ST Plan</Link></li>
                         <li className="nav-item"><Link to ="/longplan" className="nav-link">LT Plan</Link></li>
                     </ul>
