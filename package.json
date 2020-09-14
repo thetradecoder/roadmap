@@ -1,7 +1,7 @@
 {
-  "name": "roadmap",
+  "name": "planmaster",
   "version": "1.0.0",
-  "homepate": "https://thetradecoder.github.io/roadmap",
+  "homepate": "https://thetradecoder.github.io/plan-master",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
