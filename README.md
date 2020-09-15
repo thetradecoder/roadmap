@@ -4,6 +4,6 @@
 
 
 This is a planning app built with MERN Stack. 
-You can enlist your short term and long term plans here and update your progress details and can track them easily.
+You can enlist your short term, long term and daily plans here and update your progress details and can track them easily.
 
 ***
