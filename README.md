@@ -1,5 +1,5 @@
 ### This project is incomplete. Please follow the below link for the complete version of the project
-## [Plan Master - complete version](https://github.com/tradecoder/plan-master)
+## [Plan Master - complete version - https://github.com/tradecoder/plan-master](https://github.com/tradecoder/plan-master)
 
 
 # Roadmap
